@@ -1,15 +1,22 @@
 //Complete the necessary code in this file
-// import useState
+
 import React from "react";
 import Post from "./Post";
 import "./Posts.css";
-// import data 
 
-const PostsPage = () => {
-  // set up state for your data
+// pass the data from App.js down as props then map through the data
+const PostsPage = (props) => {
   return (
     <div className="posts-container-wrapper">
-      {/* map through data here to return a Post and pass data as props to Post */}
+      {/* map through data here */}
+      {props.data.map((p) => {
+        console.log('PostPage', p)
+        return (
+          <div>
+            <Post post={p}/>
+          </div>
+        );
+      })}
     </div>
   );
 };
